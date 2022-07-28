@@ -28,7 +28,7 @@ searchInput.addEventListener("input", (e) => {
 });
 
 //parcourir les recettes pour afficher une card de chacune d"elle
-async function displayData(recipes) {
+function displayData(recipes) {
   for (let i = 0; i < recipes.length; i++) {
     search = recipes.map((element) => {
       const cardBox = document.createElement("div");
