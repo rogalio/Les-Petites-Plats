@@ -11,6 +11,22 @@ async function getData() {
   return data;
 }
 
+// recuperer recette avec searchBar
+searchInput.addEventListener("input", (e) => {
+  listOfCards.innerHTML = "";
+  const value = e.target.value.toLowerCase();
+  search.forEach((word) => {
+    const isVisible =
+      word.named.toLowerCase().includes(value) ||
+      word.descriptiond.toLowerCase().includes(value);
+
+    // console.log(isVisible, word);
+    if (isVisible) {
+      listOfCards.appendChild(word.element);
+    }
+  });
+});
+
 //parcourir les recettes pour afficher une card de chacune d"elle
 async function displayData(recipes) {
   for (let i = 0; i < recipes.length; i++) {
@@ -54,6 +70,7 @@ async function displayData(recipes) {
         "mx-4",
         "gap-2"
       );
+
       element.ingredients.map((ingredient) => {
         const ingredientItem = document.createElement("p");
         ingredientsDiv.appendChild(ingredientItem);
@@ -62,24 +79,16 @@ async function displayData(recipes) {
       });
       descriptionDiv.textContent = element.description.substring(0, 250);
       descriptionDiv.classList.add("text-sm");
-      return { named: element.name, element: cardBox };
+
+      return {
+        ingredientd: element.ingredients,
+        descriptiond: element.description,
+        named: element.name,
+        element: cardBox,
+      };
     });
   }
 }
-
-//recuperer la valeur de l'input
-searchInput.addEventListener("input", (e) => {
-  const value = e.target.value.toLowerCase();
-  search.forEach((word) => {
-    const isVisible = word.named.toLowerCase().includes(value); // || user.ingredients.includes();
-    // console.log(isVisible, word);
-    console.log(word.element);
-    if (!isVisible) {
-      word.element.classList.add("hidden");
-    }
-    // word.element.classList.add("hidden", !isVisible);
-  });
-});
 
 async function init() {
   const { recipes } = await getData();
