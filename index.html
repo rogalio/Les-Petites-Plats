@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="flex flex-col justify-center mx-auto max-w-2xl">
+      <img class="mt-5 w-64 mx-auto" src="data/logo (1).png" alt="logo" />
+      <div class="flex mt-4 relative items-center">
+        <input
+          data-search
+          class="bg-gray-400 w-full outline-none h-16 rounded-sm p-2 m-4"
+          type="text "
+        />
+        <i
+          class="fa-solid fa-magnifying-glass mr-8 absolute right-0 text-xl"
+        ></i>
+      </div>
+    </header>
+
+    <main>
+      <!-- list cards -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto mt-20 gap-10 px-4"
+        id="listOfCards"
+      ></div>
+    </main>
+    <script src="/components/listOfCards.js"></script>
+    <script src="/components/searchBar.js " ;></script>
+  </body>
+</html>
