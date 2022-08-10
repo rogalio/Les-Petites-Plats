@@ -20,16 +20,16 @@
 
   <body>
     <!-- header -->
-    <header class="flex flex-col justify-center mx-auto max-w-2xl">
-      <img class="mt-5 w-64 mx-auto" src="data/logo (1).png" alt="logo" />
-      <div class="flex mt-4 relative items-center">
+    <header class="flex flex-col justify-center max-w-2xl mx-auto">
+      <img class="w-64 mx-auto mt-5" src="data/logo (1).png" alt="logo" />
+      <div class="relative flex items-center mt-4">
         <input
           id="searchInput"
-          class="bg-gray-400 w-full outline-none h-16 rounded-sm p-2 m-4"
+          class="w-full h-16 p-2 m-4 bg-gray-400 rounded-sm outline-none"
           type="text "
         />
         <i
-          class="fa-solid fa-magnifying-glass mr-8 absolute right-0 text-xl"
+          class="absolute right-0 mr-8 text-xl fa-solid fa-magnifying-glass"
         ></i>
       </div>
     </header>
@@ -37,11 +37,12 @@
     <main>
       <!-- list cards -->
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto mt-20 gap-10 px-4"
+        class="grid max-w-5xl grid-cols-1 gap-10 px-4 mx-auto mt-20 md:grid-cols-2 lg:grid-cols-3"
         id="listOfCards"
       ></div>
     </main>
 
     <script src="script/main.js" type="module"></script>
+    <script src="./components/searchBar.js"></script>
   </body>
 </html>

@@ -19,7 +19,6 @@ searchInput.addEventListener("input", (e) => {
     const isVisible =
       word.named.toLowerCase().includes(value) ||
       word.descriptiond.toLowerCase().includes(value);
-
     // console.log(isVisible, word);
     if (isVisible) {
       listOfCards.appendChild(word.element);
