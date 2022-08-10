@@ -7,3 +7,5 @@ searchInput.addEventListener("input", (e) => {
   listOfCards.innerHTML = "";
   const value = e.target.value.toLowerCase();
 });
+
+//
