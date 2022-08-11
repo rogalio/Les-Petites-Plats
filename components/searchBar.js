@@ -2,22 +2,23 @@ const searchInput = document.getElementById("searchInput");
 const listOfCards = document.getElementById("listOfCards");
 
 // Searchbar
+//faire une class search qui dans constructor passe les receipts
 
-const searchFilter = (recipes, searchInput) => {
+export const searchFilter = (recipes, searchInput) => {
   searchInput.addEventListener("input", (e) => {
     if (e.target.value.length >= 3) {
       listOfCards.innerHTML = "";
       const value = e.target.value.toLowerCase();
       const results = recipes.filter((recipe) => {
         return (
-          recipe.name.toLowerCase().startsWith(value) ||
+          recipe.name.toLowerCase().includes(value) ||
           recipe.description.toLowerCase().includes(value) ||
           recipe.ingredients.some((ingredient) =>
             ingredient.ingredient.toLowerCase().includes(value)
           )
         );
       });
-      NewrecipeCard(results);
+      return results;
     }
   });
 };

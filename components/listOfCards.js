@@ -1,6 +1,6 @@
 // recuperer mes elements html
 const listOfCards = document.getElementById("listOfCards");
-const searchInput = document.querySelector("[data-search]");
+const searchInput = document.querySelector("#searchInput");
 let search = [];
 
 //recuperer ma data (recettes)
@@ -10,9 +10,10 @@ async function getData() {
   let data = await response.json();
   return data;
 }
-
+console.log("test");
 // recuperer recette avec searchBar
-searchInput.addEventListener("input", (e) => {
+searchInput.addEventListener("keydown", (e) => {
+  console.log("hh");
   listOfCards.innerHTML = "";
   const value = e.target.value.toLowerCase();
   search.forEach((word) => {
