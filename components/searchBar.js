@@ -1,7 +1,6 @@
 const searchInput = document.getElementById("searchInput");
 const listOfCards = document.getElementById("listOfCards");
 
-// Searchbar
 //faire une class search qui dans constructor passe les receipts
 
 export const searchFilter = (recipes, searchInput) => {

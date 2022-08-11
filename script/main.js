@@ -1,24 +1,25 @@
 import { recipes } from "./../data/recipes.js";
-import { searchbar } from "./../components/searchBar.js";
+
+import Search from "./SearchClass.js";
 import Recipe from "./Recipe.js";
+
+const InstanceRecipes = [];
 
 const listOfCards = document.getElementById("listOfCards");
 
 const searchInput = document.querySelector("#searchInput");
-let search = [];
 
-console.log("test");
 // recuperer recette avec searchBar
-searchInput.addEventListener("keydown", (e) => {
-  console.log("hh");
-  listOfCards.innerHTML = "";
-  const value = e.target.value.toLowerCase();
-});
-
 function displayData(recipes) {
   recipes.forEach((element) => {
     const recipe = new Recipe(element);
+    InstanceRecipes.push(recipe);
     listOfCards.appendChild(recipe.getCardDom());
   });
 }
+
 displayData(recipes);
+let search = new Search(InstanceRecipes);
+searchInput.addEventListener("input", (e) => {
+  search.getSearch(e.target.value);
+});
